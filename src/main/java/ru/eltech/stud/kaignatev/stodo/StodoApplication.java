@@ -1,4 +1,4 @@
-package ru.eltech.kaignatev.stud.stodo;
+package ru.eltech.stud.kaignatev.stodo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
