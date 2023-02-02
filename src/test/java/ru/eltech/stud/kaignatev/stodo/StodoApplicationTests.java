@@ -1,4 +1,4 @@
-package ru.eltech.kaignatev.stud.stodo;
+package ru.eltech.stud.kaignatev.stodo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
