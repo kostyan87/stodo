@@ -30,4 +30,8 @@ public class CustomUserDetailsService implements UserDetailsService {
 
         return new User(user.getId(), user.getUsername(), user.getPassword(), authorities);
     }
+
+    public User loadUserById(Long id) {
+        return userRepository.findById(id).orElse(null);
+    }
 }
