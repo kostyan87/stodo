@@ -1,18 +1,19 @@
 package ru.eltech.stud.kaignatev.stodo.entity;
 
-import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Set;
+import javax.persistence.*;
+import java.util.*;
 
 @Data
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 public class User implements UserDetails {
 
@@ -29,14 +30,14 @@ public class User implements UserDetails {
     @ElementCollection(targetClass = ERole.class)
     @CollectionTable(name = "user_role",
     joinColumns = @JoinColumn(referencedColumnName = "id"))
-    private Set<ERole> roles;
+    private Set<ERole> roles = new HashSet<>();
 
     @Transient
     private Collection<? extends GrantedAuthority> authorities;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JoinColumn(name = "user_id")
-    private List<Term> terms;
+    private List<Term> terms = new ArrayList<>();
 
     public User(Long id, String email, String password, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;

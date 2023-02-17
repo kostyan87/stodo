@@ -1,10 +1,10 @@
 package ru.eltech.stud.kaignatev.stodo.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 

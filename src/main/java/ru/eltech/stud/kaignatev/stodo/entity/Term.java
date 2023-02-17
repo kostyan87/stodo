@@ -1,9 +1,8 @@
 package ru.eltech.stud.kaignatev.stodo.entity;
 
-import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
-
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
